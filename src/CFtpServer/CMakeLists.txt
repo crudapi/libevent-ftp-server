@@ -11,8 +11,15 @@ endif()
 
 project ("CFtpServer")
 
+set(libevent_home "/usr/local")
+include_directories(${libevent_home}/include)
+link_directories(${libevent_home}/lib)
+#file(GLOB libevent_libs ${libevent_home}/lib/*.*)
+
 # 将源代码添加到此项目的可执行文件。
 add_executable (CFtpServer "CFtpServer.cpp" "CFtpServer.h")
+
+target_link_libraries(CFtpServer event)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CFtpServer PROPERTY CXX_STANDARD 20)
