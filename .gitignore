@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+
+out
+.vs
+
+*-Debug/
+
+*.msi
+
+Debug/
