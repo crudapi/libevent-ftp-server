@@ -17,9 +17,10 @@ void time_cb(int fd, short event, void *argc)
 
 int main()
 {
+	printf("main!\n");
 	struct event_base* base = event_init();
-	tv.tv_sec = 10;
-	tv.tv_usec = 10;
+	tv.tv_sec = 2;
+	tv.tv_usec = 0;
 
 	evtimer_set(&ev, time_cb, NULL);
 	event_base_set(base, &ev);

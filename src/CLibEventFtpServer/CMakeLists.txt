@@ -11,14 +11,14 @@ endif()
 
 project ("CLibEventFtpServer")
 
-set(libevent_home "/opt/libevent/")
+set(libevent_home "/usr/local")
 include_directories(${libevent_home}/include)
 link_directories(${libevent_home}/lib)
 file(GLOB libevent_libs ${libevent_home}/lib/*.*)
 
 
 # 将源代码添加到此项目的可执行文件。
-add_executable (CLibEventFtpServer "CLibEventFtpServer.cpp" "CLibEventFtpServer.h")
+add_executable (CLibEventFtpServer "CLibEventFtpServer.cpp" )
 
 target_link_libraries(CLibEventFtpServer ${libevent_libs})
 
